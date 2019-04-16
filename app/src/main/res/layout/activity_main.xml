@@ -7,28 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/image_button_src"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/text_view_plain1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="Upload your image."
-        android:textSize="32sp"
-        android:visibility="visible"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_button_src"/>
-
     <android.support.constraint.Group
         android:id="@+id/group_result_text"
         android:layout_width="wrap_content"
@@ -41,6 +19,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:constraint_referenced_ids="text_view_plain1,button_send"/>
+
+    <android.support.constraint.Group
+        android:id="@+id/group_loading_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="image_view_overlay,progress_main"/>
+
+    <ImageView
+        android:id="@+id/image_button_src"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/colorPrimary"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/image_view_overlay"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="#33000000"
+        app:layout_constraintLeft_toLeftOf="@id/image_button_src"
+        app:layout_constraintTop_toTopOf="@id/image_button_src"/>
+
+    <TextView
+        android:id="@+id/text_view_plain1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Upload your image."
+        android:textSize="32sp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_button_src"/>
 
     <TextView
         android:id="@+id/text_view_plain2"
